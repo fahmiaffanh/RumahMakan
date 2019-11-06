@@ -1,0 +1,22 @@
+cek data
+{{dd($namavariabel)}}
+
+php artisan make:controller namacontroller
+php artisan make:migration create_namatabel
+
+composer require laravel/ui --dev
+php artisan ui vue --auth
+npm install
+npm run dev
+bit.ly/2nhkcDe
+
+INPUT
+	Staff
+	Dept
+KERJAAN
+LAPORAN
+
+php artisan route:list --name=staff --columns=uri,name,action
+php artisan make:seeder StaffTableSeeder
+php artisan make:factory StaffFactory
+php artisan db:seed --class=StaffTableSeeder
