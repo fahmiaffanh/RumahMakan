@@ -1,0 +1,38 @@
+1. buat laravel
+2. buat database di phpmyadmin
+3. buat migration (make:migration create_tblnama)
+	isi migration dengan nama field dan tipenya (string,integer,enum)
+4. buat model (make:model namamodel)
+	kalau tipe field ada yang enum, bikin accesornya di mode. contoh:
+
+	public function getjenisAttribute($jenis){
+        $namajenis = "";
+        if($jenis=="w"){
+            $namajenis = "Waiter";
+        }elseif($jenis=="k"){
+            $namajenis = "Koki";
+        }elseif($jenis=="c"){
+            $namajenis = "Kasir";
+        }
+        return $namajenis;
+    }
+
+5. bikin controller (make:controller namacontroller --resource)
+6. isi controller
+	jangan lupa use app\namamodel di atas
+7. bikin view main.blade.php
+8. bikin folder partials dan isi (navbar, sidebar kalau pake)
+9. bikin folder untuk form dan listnya masing2
+10. koding option di folder :
+	<div class="form-group">
+                        <label for="jenis">Jenis</label>
+                        <select name="jenis" id="jenis"
+                            class="form-control">
+                            <option value="w" {{ isset($data) && $data->jenis=="Waiter"?"selected":'' }}>
+                            Waiter</option>
+                            <option value="k" {{ isset($data) && $data->jenis=="Koki"?"selected":'' }}>
+                            Koki</option>
+                            <option value="c" {{ isset($data) && $data->jenis=="Kasir"?"selected":'' }}>
+                            Kasir</option>
+                        </select>
+    </div>
